@@ -14,15 +14,12 @@ $(document).ready(function () {
     data.forEach(function (book, i) {
 
       $booksTableBody.append(
-        "<tr>" +
         "<td>" + book.title + "</td>" +
-        "<td>" + book.subtitle + "</td>" +
         "<td>" + printAuthors(book.authors) + "</td>" +
         "<td>" + book.publisher.name + "</td>" +
         "<td>Kr. " + book.price + ",-</td>" +
         "</tr>");
     });
-
   });
 
   //Fires on page-load
@@ -40,7 +37,6 @@ $(document).ready(function () {
         "<td>" + user.id + "</td>" +
         "</tr>");
     });
-
   });
 
   var currentUser = SDK.User.current();
@@ -69,9 +65,7 @@ $(document).ready(function () {
             '</label>' +
           '</div>'
         );
-
       });
-
     });
 
     //Fetch authors, and set to DOM
