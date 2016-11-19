@@ -1,4 +1,3 @@
-
 $(document).ready(function () {
 
   $("#loginButton").on("click", function(e){
@@ -16,7 +15,11 @@ $(document).ready(function () {
 
       //Login OK!
       $("#loginForm").find(".form-group").addClass("has-success");
-            window.location.href = "admin.html";
+      if (data.type==1) {
+        window.location.href = "admin.html";
+      } else {
+        window.location.href = "user.html";
+      }
     });
   });
 });

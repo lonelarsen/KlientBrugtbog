@@ -1,16 +1,13 @@
-/**
- * Created by lonelarsen on 10/11/2016.
- */
 $(document).ready(function () {
 
     //Fires on page-load
     SDK.Book.getAll(function(err, data){
         if(err) throw err;
 
-        var $booksTableBody = $("#booksTableBody");
+        var $adsTableBody = $("#booksTableBody");
         data.forEach(function (book, i) {
 
-            $booksTableBody.append(
+            $adsTableBody.append(
                 "<tr>" +
                 "<td>" + book.title + "</td>" +
                 "<td>" + book.author  + "</td>" +
@@ -18,5 +15,8 @@ $(document).ready(function () {
                 "<td>" + book.isbn + "</td>" +
                 "</tr>");
         });
+
     });
+
 });
+

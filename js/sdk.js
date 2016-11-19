@@ -8,7 +8,6 @@ var SDK = {
     $.ajax({
       url: SDK.serverURL + options.url,
       method: options.method,
-      contentType: "application/json",
       dataType: "json",
       data: JSON.stringify(options.data),
       success: function (data, status, xhr) {
@@ -95,5 +94,4 @@ var SDK = {
       window.localStorage.removeItem(this.prefix + key);
     }
   }
-
 };
