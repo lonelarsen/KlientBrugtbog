@@ -115,7 +115,7 @@ $(document).ready(function () {
           title: $("#bookTitle").val(),
           author: $("#bookAuthor").val(),
           edition: $("#bookEdition").val(),
-          isbn: parseInt($("#bookISBN").val()),
+          isbn: parseInt($("#bookIsbn").val())
           //publisherId: $("input[name=publisherRadios]:checked").val()
         };
 

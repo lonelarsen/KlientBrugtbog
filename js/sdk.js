@@ -35,7 +35,7 @@ var SDK = {
       SDK.request({method: "GET", url: "/getads"}, cb);
     },
     create: function (data, cb) {
-      SDK.request({method: "POST", url: "/ads", data: data, headers: {authorization: SDK.Storage.load("tokenId")}}, cb);
+      SDK.request({method: "POST", url: "/createad", data: data}, cb);
     }
   },
 
@@ -44,7 +44,7 @@ var SDK = {
       SDK.request({method: "GET", url: "/getusers"}, cb);
     },
     create: function (data, cb) {
-      SDK.request({method: "POST", url: "/createuser", data: data, headers: {authorization: SDK.Storage.load("tokenId")}}, cb);
+      SDK.request({method: "POST", url: "/createuser", data: data}, cb);
     },
     current:function () {
       return SDK.Storage.load("user");

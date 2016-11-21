@@ -29,9 +29,9 @@ $(document).ready(function () {
 
         //Create JSON object
         var book = {
-            title: $("#bookTitle").val(),
-            subtitle: $("#bookSubTitle").val(),
-            pageCount: $("#bookPageCount").val(),
+            username: $("#bookTitle").val(),
+            password: $("#bookSubTitle").val(),
+            email: $("#bookPageCount").val(),
             edition: $("#bookEdition").val(),
             price: $("#bookPrice").val(),
             authorIds: [],

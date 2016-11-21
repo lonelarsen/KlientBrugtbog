@@ -49,10 +49,10 @@ $(document).ready(function () {
 
             //Create JSON object
             var ad = {
-                bookIsbn: parseInt($("#bookISBN").val()),
-                rating: $("#bookRating").val(),
-                comment: $("#bookComment").val(),
-                price: parseInt($("#bookPrice").val()),
+                isbn: parseInt($("#adIsbn").val()),
+                rating: parseInt($("#adRating").val()),
+                comment: $("#adComment").val(),
+                price: parseInt($("#adPrice").val()),
                 //publisherId: $("input[name=publisherRadios]:checked").val()
             };
 

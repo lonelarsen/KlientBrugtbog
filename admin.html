@@ -32,8 +32,8 @@
           </div>
           <div class="col-md-12">
             <div class="form-group">
-              <label class="control-label" for="bookSubTitle">Forfatter</label>
-              <input class="form-control" id="bookSubTitle" type="text">
+              <label class="control-label" for="bookAuthor">Forfatter</label>
+              <input class="form-control" id="bookAuthor" type="text">
             </div>
           </div>
           <div class="col-md-4">
@@ -44,8 +44,8 @@
           </div>
           <div class="col-md-4">
             <div class="form-group">
-              <label class="control-label" for="bookPrice">ISBN</label>
-              <input class="form-control" id="bookPrice" type="text">
+              <label class="control-label" for="bookIsbn">ISBN</label>
+              <input class="form-control" id="bookIsbn" type="number">
             </div>
           </div>
               <!-- Values set by jQuery -->
@@ -90,6 +90,8 @@
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
             <ul class="nav navbar-nav">
               <li><a>Hej, <span id="currentUserName"></span></a></li>
+              <li><a href="books.html">Se alle bøger</a></li>
+              <li><a href="ads.html">Se alle bøger til salg</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
               <li><a id="logOutLink">Logud</a></li>
@@ -124,7 +126,6 @@
           <button class="btn btn-success" id="addNewBookButton">
             <span class="glyphicon glyphicon-plus"></span> Opret ny bog
           </button>
-
         </div>
       </div>
 
@@ -154,9 +155,9 @@
             <span class="glyphicon glyphicon-plus"></span> Opret ny bruger
           </button>
 -->
-
         </div>
       </div>
+
       <div class="panel panel-primary">
         <div class="panel-heading">
           <h3 class="panel-title">Annoncer</h3>
