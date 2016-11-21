@@ -15,8 +15,5 @@ $(document).ready(function () {
           "<td>" + book.isbn + "</td>" +
         "</tr>");
     });
-
   });
-
 });
-

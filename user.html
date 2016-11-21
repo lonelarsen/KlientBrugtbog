@@ -7,9 +7,66 @@
     <link rel="stylesheet" href="css/sticky-footer.css">
 
     <meta charset="UTF-8">
-    <title>User</title>
+    <title>Bruger</title>
+
 </head>
 <body>
+<!-- New Ad Modal -->
+<div class="modal fade" id="newAdModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title">Opret ny bog</h4>
+            </div>
+            <div class="modal-body">
+
+                <div class="row" >
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label class="control-label" for="AdIsbn">ISBN</label>
+                            <input class="form-control" id="adIsbn" type="text">
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label class="control-label" for="bookRating">Rating</label>
+                            <input class="form-control" id="bookRating" type="text">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label class="control-label" for="bookComment">Kommentar</label>
+                            <input class="form-control" id="bookComment" type="text">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label class="control-label" for="bookPrice">Pris</label>
+                            <input class="form-control" id="bookPrice" type="text">
+                        </div>
+                    </div>
+                    <!-- Values set by jQuery -->
+
+                    <!--
+                              <div class="col-md-6">
+                                <div class="form-group">
+                                  <label class="control-label" id="authorsCheckbox">Forfatter(e)</label>
+                                  &lt;!&ndash; Values set by jQuery &ndash;&gt;
+                                </div>
+                              </div>
+                    -->
+                </div>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Luk</button>
+                <button type="button" class="btn btn-success" id="createBookButton">Opret bog</button>
+            </div>
+        </div>
+    </div>
+</div>
 
 <div class="container">
 
@@ -41,32 +98,59 @@
             </nav>
 
 
+            <div class="page-header">
+                <h1>Bruger</h1>
+            </div>
 
-</div>
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Bøger</h3>
+                </div>
+                <div class="panel-body">
+
+                    <table class="table table-striped">
+                        <thead>
+                        <th>Titel</th>
+                        <th>Forfatter(e)</th>
+                        <th>Udgave</th>
+                        <th>ISBN</th>
+                        </thead>
+                        <tbody id="booksTableBody">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="panel panel-primary">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Annoncer</h3>
+                </div>
+                <div class="panel-body">
+
+                    <table class="table table-striped">
+                        <thead>
+                        <th>Titel</th>
+                        <th>Forfatter(e)</th>
+                        <th>Udgave</th>
+                        <th>ISBN</th>
+                        <th>Rating</th>
+                        <th>Kommentar</th>
+                        <th style="width: 75px;">Pris</th>
+                        </thead>
+                        <tbody id="adsTableBody">
+                        </tbody>
+                    </table>
+
+                    <hr>
+                    <!-- Button trigger modal -->
+                    <button class="btn btn-success" id="addNewAdButton">
+                        <span class="glyphicon glyphicon-plus"></span> Opret ny annonce
+                    </button>
+
+                </div>
+            </div>
+        </div>
     </div>
-        <div class="panel panel-primary">
-            <div class="panel-heading">
-                <h3 class="panel-title">Annoncer</h3>
-            </div>
-            <div class="panel-body">
-
-                <table class="table table-striped">
-                    <thead>
-                    <th>Titel</th>
-                    <th>Forfatter(e)</th>
-                    <th>Udgave</th>
-                    <th style="width: 75px;">Pris</th>
-                    </thead>
-                    <tbody id="adsTableBody">
-                    </tbody>
-                </table>
-                <hr>
-                <!-- Button trigger modal
-                <button class="btn btn-success" id="addNewBookButton">
-                  <span class="glyphicon glyphicon-plus"></span> Opret ny bog
-                </button>
-        -->
-            </div>
 </div>
 
 <footer class="footer">
@@ -78,7 +162,7 @@
 <script src="lib/js/jquery-3.1.1.js"></script>
 <script src="lib/js/bootstrap.js"></script>
 <script src="js/sdk.js"></script>
-<script src="js/admin.page.js"></script>
+<script src="js/user.page.js"></script>
 
 </body>
 </html>

@@ -10,6 +10,7 @@ var SDK = {
       method: options.method,
       dataType: "json",
       data: JSON.stringify(options.data),
+      xhrFields: { withCredentials: true },
       success: function (data, status, xhr) {
         cb(null, data, status, xhr);
       },
@@ -24,22 +25,29 @@ var SDK = {
       SDK.request({method: "GET", url: "/getbooks"}, cb);
     },
     create: function (data, cb) {
-      SDK.request({method: "POST", url: "/books", data: data, headers: {authorization: SDK.Storage.load("tokenId")}}, cb);
+      SDK.request({method: "POST", url: "/createbook", data: data}, cb);
+    }
+  },
+
+
+  Ad: {
+    getAll: function (cb) {
+      SDK.request({method: "GET", url: "/getads"}, cb);
+    },
+    create: function (data, cb) {
+      SDK.request({method: "POST", url: "/ads", data: data, headers: {authorization: SDK.Storage.load("tokenId")}}, cb);
     }
   },
 
   User: {
     getAll: function (cb) {
-      SDK.request({method: "GET", url: "/staffs"}, cb);
+      SDK.request({method: "GET", url: "/getusers"}, cb);
+    },
+    create: function (data, cb) {
+      SDK.request({method: "POST", url: "/createuser", data: data, headers: {authorization: SDK.Storage.load("tokenId")}}, cb);
     },
     current:function () {
       return SDK.Storage.load("user");
-    }
-  },
-
-  Publisher: {
-    getAll: function (cb) {
-      SDK.request({method: "GET", url: "/publishers"}, cb);
     }
   },
 
