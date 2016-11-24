@@ -50,49 +50,48 @@
 
                     <legend>Opret bruger</legend>
 
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                <label class="control-label" for="username">Brugernavn</label>
-                                <input class="form-control" id="username" type="text">
-                            </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label class="control-label" for="newUserUsername">Brugernavn</label>
+                            <input class="form-control" id="newUserUsername" type="text" placeholder="Brugernavn">
                         </div>
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                <label class="control-label" for="password">Adgangskode</label>
-                                <input class="form-control" id="password" type="text">
-                            </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label class="control-label" for="newUserPassword">Adgangskode</label>
+                            <input class="form-control" id="newUserPassword" type="text" placeholder="Adgangskode">
                         </div>
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                <label class="control-label" for="email">E-mail</label>
-                                <input class="form-control" id="email" type="text">
-                            </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label class="control-label" for="newUserEmail">E-mail</label>
+                            <input class="form-control" id="newUserEmail" type="text" placeholder="E-mail">
                         </div>
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                <label class="control-label" for="phone">Telefonnummer</label>
-                                <input class="form-control" id="phone" type="text">
-                            </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label class="control-label" for="newUserPhone">Telefonnummer</label>
+                            <input class="form-control" id="newUserPhone" type="number" placeholder="Telefonnummer">
                         </div>
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                <label class="control-label" for="address">Adresse</label>
-                                <input class="form-control" id="address" type="text">
-                            </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label class="control-label" for="newUserAddress">Adresse</label>
+                            <input class="form-control" id="newUserAddress" type="text" placeholder="Addresse">
                         </div>
+                    </div>
+                    <div>
+                        <h7> Jeg tager imod følgende betalinger: </h7> <br>
+                        <!--<form action="demo_form.asp" method="get"> -->
 
-                        <div>
-                            <h7> Jeg tager imod følgende betalinger: </h7> <br>
-                            <form action="demo_form.asp" method="get">
+                            <input type="checkbox" name="mobilepay" value="mobilepay">Mobilepay<br>
+                            <input type="checkbox" name="cash" value="cash">Kontant<br>
+                            <input type="checkbox" name="transfer" value="transfer">Bankoverførsel<br>
+                        </form>
+                    </div>
 
-                                <input type="checkbox" name="mobilepay" value="mobilepay">Mobilepay<br>
-                                <input type="checkbox" name="cash" value="cash">Kontant<br>
-                                <input type="checkbox" name="transfer" value="transfer">Bankoverførsel<br>
-                            </form>
-                        </div>
-
-                    <button class="btn btn-success pull-right" id="loginButton">Opret</button>
+                    <!--<button type="button" class="btn btn-default" id="cancel">Annuller</button>-->
+                    <button type="button" class="btn btn-success" id="createUserButton">Opret</button>
 
                 </fieldset>
             </form>
@@ -113,7 +112,7 @@
 <script src="lib/js/jquery-3.1.1.js"></script>
 <script src="lib/js/bootstrap.js"></script>
 <script src="js/sdk.js"></script>
-<script src="js/login.page.js"></script>
+<script src="js/create.user.js"></script>
 
 </body>
 </html>

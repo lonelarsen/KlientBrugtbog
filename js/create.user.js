@@ -1,39 +1,42 @@
 $(document).ready(function () {
 
-    //Fires on page-load
-    SDK.Book.getAll(function (err, data) {
-        if (err) throw err;
+    /**
+     * Create a new User
+     */
+    $("#createUserButton").on("click", function () {
 
-    $("#addNewUser").on("click", function () {
-
-        //Show modal
-        $('#newUserModal').modal('show');
-
-        //Fetch user, and set to DOM
-        SDK.User.getAll(function (err, publishers) {
-            if (err) throw err;
-
-            var $usersRadio = $("#usersRadio");
-            users.forEach(function (publisher, i) {
-
-                $publishersRadio.append(
-                    '<div class="radio">' +
-                    '<label>' +
-                    '<input type="radio" name="publisherRadios" id="optionsRadios' + i + '" value="' + publisher.id + '">' +
-                    publisher.name +
-                    '</label>' +
-                    '</div>'
-                );
-            });
-        });
+        //Checkboxes
+        var mobilapayIsChecked=0;
+        if ($("input[name=mobilepay]:checked").val()){
+            mobilepayIsChecked=1
+        }
+        var cashIsChecked=0;
+        if ($("input[name=cash]:checked").val()){
+            cashIsChecked=1
+        }
+        var transferIsChecked=0;
+        if ($("input[name=transfer]:checked").val()){
+            transferIsChecked=1
+        }
 
         //Create JSON object
-        var book = {
-            username: $("#bookTitle").val(),
-            password: $("#bookSubTitle").val(),
-            email: $("#bookPageCount").val(),
-            edition: $("#bookEdition").val(),
-            price: $("#bookPrice").val(),
-            authorIds: [],
-            publisherId: $("input[name=publisherRadios]:checked").val()
+        var user = {
+            username: $("#newUserUsername").val(),
+            password: $("#newUserPassword").val(),
+            email: $("#newUserEmail").val(),
+            phonenumber: parseInt($("#newUserPhone").val()),
+            address: $("#newUserAddress").val(),
+
+            mobilepay: mobilapayIsChecked,
+            cash: cashIsChecked,
+            transfer: transferIsChecked,
         };
+
+        //Create user
+        SDK.User.create(user, function(err, data){
+            if(err) throw err;
+
+            window.location.href="user.html"
+        });
+    });
+});
