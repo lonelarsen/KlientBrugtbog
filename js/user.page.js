@@ -64,4 +64,9 @@ $(document).ready(function () {
             });
         });
     });
+
+    $("#logOutLink").on("click", function () {
+        SDK.logOut();
+        window.location.href = "index.html";
+    });
 });
