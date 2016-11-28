@@ -36,6 +36,9 @@ var SDK = {
     },
     create: function (data, cb) {
       SDK.request({method: "POST", url: "/createad", data: data}, cb);
+    },
+    reserve: function (data, cb) {
+      SDK.request({method: "POST", url: "/reservead", data: data}, cb);
     }
   },
 
@@ -46,14 +49,11 @@ var SDK = {
     create: function (data, cb) {
       SDK.request({method: "POST", url: "/createuser", data: data}, cb);
     },
+    update: function (data, cb) {
+      SDK.request({method: "POST", url: "/updateuser", data: data}, cb);
+    },
     current:function () {
       return SDK.Storage.load("user");
-    }
-  },
-
-  Author: {
-    getAll: function (cb) {
-      SDK.request({method: "GET", url: "/authors"}, cb);
     }
   },
 
@@ -82,9 +82,9 @@ var SDK = {
 
       cb(null, data);
     });
-  },
+  }
 
-  Storage: {
+/*  Storage: {
     prefix: "BookStoreSDK",
     persist: function (key, value) {
       window.localStorage.setItem(this.prefix + key, (typeof value === 'object') ? JSON.stringify(value) : value)
@@ -101,5 +101,5 @@ var SDK = {
     remove:function (key) {
       window.localStorage.removeItem(this.prefix + key);
     }
-  }
+  }*/
 };

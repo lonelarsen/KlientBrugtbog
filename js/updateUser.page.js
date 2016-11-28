@@ -1,9 +1,9 @@
 $(document).ready(function () {
 
     /**
-     * Create a new User
+     * Update a User
      */
-    $("#createUserButton").on("click", function () {
+    $("#updateUserButton").on("click", function () {
 
         //Checkboxes
         var mobilepayIsChecked=0;
@@ -19,24 +19,29 @@ $(document).ready(function () {
             transferIsChecked=1
         }
 
-        //Create JSON object
+        //Update JSON object
         var user = {
-            username: $("#newUserUsername").val(),
-            password: $("#newUserPassword").val(),
-            email: $("#newUserEmail").val(),
-            phonenumber: parseInt($("#newUserPhonenumber").val()),
-            address: $("#newUserAddress").val(),
+            username: $("#updateUserUsername").val(),
+            password: $("#updateUserPassword").val(),
+            email: $("#updateUserEmail").val(),
+            phonenumber: parseInt($("#updateUserPhonenumber").val()),
+            address: $("#updateUserAddress").val(),
 
             mobilepay: mobilepayIsChecked,
             cash: cashIsChecked,
             transfer: transferIsChecked,
         };
 
-        //Create user
-        SDK.User.create(user, function(err){
+        //Update user
+        SDK.User.update(user, function(err){
             if(err) throw err;
 
             window.location.href="user.html"
         });
+    });
+
+    $("#logOutLink").on("click", function () {
+        SDK.logOut();
+        window.location.href = "index.html";
     });
 });

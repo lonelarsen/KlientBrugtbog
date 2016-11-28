@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<link rel="stylesheet" href="lib/css/bootstrap.css">
+<link rel="stylesheet" href="lib/css/bootstrap.lumen.min.css">
+<link rel="stylesheet" href="css/sticky-footer.css">
+
+<meta charset="UTF-8">
+<title>Opret bruger</title>
+
+</head>
+<body>
+
+<div class="container">
+
+    <div class="row">
+        <div class="col-lg-12">
+
+            <nav class="navbar navbar-inverse">
+                <div class="container-fluid">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="index.html">Brugtbogsbørs</a>
+                    </div>
+
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
+                        <ul class="nav navbar-nav">
+                            <li><a href="books.html">Se alle bøger</a></li>
+                            <li><a href="ads.html">Se alle bøger til salg</a></li>
+                        </ul>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li class="active"><a href="login.html">Login <span class="sr-only">(current)</span></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-6 col-lg-offset-3">
+            <form class="form-horizontal" id="loginForm">
+                <fieldset>
+                    <legend>Opret bruger</legend>
+
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label class="control-label" for="newUserUsername">Brugernavn</label>
+                            <input class="form-control" id="newUserUsername" type="text" placeholder="Brugernavn">
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label class="control-label" for="newUserPassword">Adgangskode</label>
+                            <input class="form-control" id="newUserPassword" type="text" placeholder="Adgangskode">
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label class="control-label" for="newUserEmail">E-mail</label>
+                            <input class="form-control" id="newUserEmail" type="text" placeholder="E-mail">
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label class="control-label" for="newUserPhonenumber">Telefonnummer</label>
+                            <input class="form-control" id="newUserPhonenumber" type="number" placeholder="Telefonnummer">
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label class="control-label" for="newUserAddress">Adresse</label>
+                            <input class="form-control" id="newUserAddress" type="text" placeholder="Addresse">
+                        </div>
+                    </div>
+                    <div>
+                        <h7> Jeg tager imod følgende betalinger: </h7> <br>
+                        <!--<form action="demo_form.asp" method="get"> -->
+
+                            <input type="checkbox" name="mobilepay" value="mobilepay">Mobilepay<br>
+                            <input type="checkbox" name="cash" value="cash">Kontant<br>
+                            <input type="checkbox" name="transfer" value="transfer">Bankoverførsel<br>
+                        </form>
+                    </div>
+
+                    <!--<button type="button" class="btn btn-default" id="cancel">Annuller</button>-->
+                    <button type="button" class="btn btn-success" id="createUserButton">Opret</button>
+
+                </fieldset>
+            </form>
+        </div>
+    </div>
+
+</div>
+
+
+</div>
+
+<footer class="footer">
+    <div class="container">
+        <p class="text-muted">2016 © All rights reserved - Brugtbogsbørs</p>
+    </div>
+</footer>
+
+<script src="lib/js/jquery-3.1.1.js"></script>
+<script src="lib/js/bootstrap.js"></script>
+<script src="js/sdk.js"></script>
+<script src="js/createUser.page.js"></script>
+
+</body>
+</html>

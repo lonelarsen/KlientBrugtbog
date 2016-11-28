@@ -1,6 +1,6 @@
 $(document).ready(function () {
 
-    //Fires on page-load
+    //All Books
     SDK.Book.getAll(function(err, data){
         if(err) throw err;
 
@@ -17,7 +17,7 @@ $(document).ready(function () {
         });
     });
 
-    //Fires on page-load
+    //All Ads
     SDK.Ad.getAll(function(err, data){
         if(err) throw err;
 
@@ -31,9 +31,26 @@ $(document).ready(function () {
                 "<td>" + ad.bookEdition + "</td>" +
                 "<td>" + ad.isbn + "</td>" +
                 "<td>" + ad.rating + "</td>" +
-                "<td>" + ad.comment + "</td>" +
                 "<td>" + ad.pris + "</td>" +
+                "<td>" + ad.comment + "</td>" +
+                "<td><button class='reserveAdButton' data-adId=" + ad.adId + ">Reserver</button></td>" +
                 "</tr>");
+        });
+
+        /**
+         * Reserve an Ad
+         */
+        $(".reserveAdButton").on("click", function(){
+            var $reserveAdButton = $(this);
+            var adId = {
+                id: $reserveAdButton.data("adid")
+            };
+
+            //Reserve Ad
+            SDK.Ad.reserve(adId, function (err, data){
+                if (err) throw err;
+                location.reload();
+            });
         });
     });
 
@@ -53,7 +70,6 @@ $(document).ready(function () {
                 rating: parseInt($("#adRating").val()),
                 comment: $("#adComment").val(),
                 price: parseInt($("#adPrice").val()),
-                //publisherId: $("input[name=publisherRadios]:checked").val()
             };
 
             //Create ad

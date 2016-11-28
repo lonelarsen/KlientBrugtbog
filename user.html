@@ -58,6 +58,7 @@
     </div>
 </div>
 
+<!-- Header Menu -->
 <div class="container">
 
     <div class="row">
@@ -78,11 +79,12 @@
 
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
                         <ul class="nav navbar-nav">
-                            <li><a>Hej, <span id="currentUserName"></span></a></li>
+                            <li><a>Hej, <span id="currentUsername"></span></a></li>
                             <li><a href="books.html">Se alle bøger</a></li>
                             <li><a href="ads.html">Se alle bøger til salg</a></li>
                         </ul>
                         <ul class="nav navbar-nav navbar-right">
+                            <li><a href="updateUser.html">Rediger bruger</a></li>
                             <li><a id="logOutLink">Log ud</a></li>
                         </ul>
                     </div>
@@ -94,6 +96,7 @@
                 <h1>Bruger</h1>
             </div>
 
+            <!-- All Books -->
             <div class="panel panel-primary">
                 <div class="panel-heading">
                     <h3 class="panel-title">Bøger</h3>
@@ -112,6 +115,7 @@
                 </div>
             </div>
 
+            <!-- All Ads -->
             <div class="panel panel-primary">
                 <div class="panel-heading">
                     <h3 class="panel-title">Annoncer</h3>
@@ -125,19 +129,17 @@
                         <th>Udgave</th>
                         <th>ISBN</th>
                         <th>Rating</th>
-                        <th>Kommentar</th>
                         <th style="width: 75px;">Pris</th>
+                        <th>Kommentar</th>
                         </thead>
                         <tbody id="adsTableBody">
                         </tbody>
                     </table>
 
-                    <hr>
                     <!-- Button trigger modal -->
                     <button class="btn btn-success" id="addNewAdButton">
-                        <span class="glyphicon glyphicon-plus"></span> Opret ny annonce
+                        <span class="glyphicon glyphicon-plus"></span>Opret ny annonce
                     </button>
-
                 </div>
             </div>
         </div>

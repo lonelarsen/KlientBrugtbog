@@ -2,12 +2,12 @@
 <html lang="en">
 <head>
 
-<link rel="stylesheet" href="lib/css/bootstrap.css">
-<link rel="stylesheet" href="lib/css/bootstrap.lumen.min.css">
-<link rel="stylesheet" href="css/sticky-footer.css">
+    <link rel="stylesheet" href="lib/css/bootstrap.css">
+    <link rel="stylesheet" href="lib/css/bootstrap.lumen.min.css">
+    <link rel="stylesheet" href="css/sticky-footer.css">
 
-<meta charset="UTF-8">
-<title>Opret bruger</title>
+    <meta charset="UTF-8">
+    <title>Rediger bruger</title>
 
 </head>
 <body>
@@ -31,11 +31,12 @@
 
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
                         <ul class="nav navbar-nav">
+                            <li><a>Hej, <span id="currentUsername"></span></a></li>
                             <li><a href="books.html">Se alle bøger</a></li>
                             <li><a href="ads.html">Se alle bøger til salg</a></li>
                         </ul>
                         <ul class="nav navbar-nav navbar-right">
-                            <li class="active"><a href="login.html">Login <span class="sr-only">(current)</span></a></li>
+                            <li><a id="logOutLink">Logud</a></li>
                         </ul>
                     </div>
                 </div>
@@ -47,55 +48,55 @@
         <div class="col-lg-6 col-lg-offset-3">
             <form class="form-horizontal" id="loginForm">
                 <fieldset>
-                    <legend>Opret bruger</legend>
+                    <legend>Rediger bruger</legend>
 
                     <div class="col-md-12">
                         <div class="form-group">
-                            <label class="control-label" for="newUserUsername">Brugernavn</label>
-                            <input class="form-control" id="newUserUsername" type="text" placeholder="Brugernavn">
+                            <label class="control-label" for="updateUserUsername">Brugernavn</label>
+                            <input class="form-control" id="updateUserUsername" type="text" placeholder="Brugernavn">
                         </div>
                     </div>
                     <div class="col-md-12">
                         <div class="form-group">
-                            <label class="control-label" for="newUserPassword">Adgangskode</label>
-                            <input class="form-control" id="newUserPassword" type="text" placeholder="Adgangskode">
+                            <label class="control-label" for="updateUserPassword">Adgangskode</label>
+                            <input class="form-control" id="updateUserPassword" type="text" placeholder="Adgangskode">
                         </div>
                     </div>
                     <div class="col-md-12">
                         <div class="form-group">
-                            <label class="control-label" for="newUserEmail">E-mail</label>
-                            <input class="form-control" id="newUserEmail" type="text" placeholder="E-mail">
+                            <label class="control-label" for="updateUserEmail">E-mail</label>
+                            <input class="form-control" id="updateUserEmail" type="text" placeholder="E-mail">
                         </div>
                     </div>
                     <div class="col-md-12">
                         <div class="form-group">
-                            <label class="control-label" for="newUserPhonenumber">Telefonnummer</label>
-                            <input class="form-control" id="newUserPhonenumber" type="number" placeholder="Telefonnummer">
+                            <label class="control-label" for="updateUserPhonenumber">Telefonnummer</label>
+                            <input class="form-control" id="updateUserPhonenumber" type="number" placeholder="Telefonnummer">
                         </div>
                     </div>
                     <div class="col-md-12">
                         <div class="form-group">
-                            <label class="control-label" for="newUserAddress">Adresse</label>
-                            <input class="form-control" id="newUserAddress" type="text" placeholder="Addresse">
+                            <label class="control-label" for="updateUserAddress">Adresse</label>
+                            <input class="form-control" id="updateUserAddress" type="text" placeholder="Addresse">
                         </div>
                     </div>
                     <div>
                         <h7> Jeg tager imod følgende betalinger: </h7> <br>
                         <!--<form action="demo_form.asp" method="get"> -->
 
-                            <input type="checkbox" name="mobilepay" value="mobilepay">Mobilepay<br>
-                            <input type="checkbox" name="cash" value="cash">Kontant<br>
-                            <input type="checkbox" name="transfer" value="transfer">Bankoverførsel<br>
-                        </form>
-                    </div>
-
-                    <!--<button type="button" class="btn btn-default" id="cancel">Annuller</button>-->
-                    <button type="button" class="btn btn-success" id="createUserButton">Opret</button>
-
-                </fieldset>
+                        <input type="checkbox" name="updateMobilepay" value="updateMobilepay">Mobilepay<br>
+                        <input type="checkbox" name="updateCash" value="updateCash">Kontant<br>
+                        <input type="checkbox" name="updateTransfer" value="updateTransfer">Bankoverførsel<br>
             </form>
         </div>
+
+        <!--<button type="button" class="btn btn-default" id="cancel">Annuller</button>-->
+        <button type="button" class="btn btn-success" id="updateUserButton">Gem</button>
+
+        </fieldset>
+        </form>
     </div>
+</div>
 
 </div>
 
@@ -111,7 +112,7 @@
 <script src="lib/js/jquery-3.1.1.js"></script>
 <script src="lib/js/bootstrap.js"></script>
 <script src="js/sdk.js"></script>
-<script src="js/create.user.js"></script>
+<script src="js/updateUser.page.js"></script>
 
 </body>
 </html>
