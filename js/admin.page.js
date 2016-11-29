@@ -22,22 +22,34 @@ $(document).ready(function () {
       if (err) throw err;
 
       var $usersTableBody = $("#usersTableBody");
-      data.forEach(function (user) {
+      data.forEach(function (user){
 
-          function mobilepay() {
-              if (user.mobilepay == 1)
-              {return "Ja"}
-              else {return "Nej"}}
+          function mobilepay(){
+              if (user.mobilepay == 1){
+                  return "Ja"
+              }
+              else {
+                  return "Nej"
+              }
+          }
 
-          function cash() {
-              if (user.cash == 1)
-              {return "Ja"}
-              else {return "Nej"}}
+          function cash(){
+              if (user.cash == 1){
+                  return "Ja"
+              }
+              else {
+                  return "Nej"
+              }
+          }
 
-          function transfer() {
-              if (user.transfer == 1)
-              {return "Ja"}
-              else {return "Nej"}}
+          function transfer(){
+              if (user.transfer == 1){
+                  return "Ja"
+              }
+              else {
+                  return "Nej"
+              }
+          }
 
         $usersTableBody.append(
             "<tr>" +

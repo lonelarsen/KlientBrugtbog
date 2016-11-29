@@ -73,7 +73,7 @@ $(document).ready(function () {
             };
 
             //Create ad
-            SDK.Ad.create(ad, function(err, data){
+            SDK.Ad.create(ad, function(err){
                 if(err) throw err;
 
                 $("#newAdModal").modal("hide");
@@ -86,12 +86,16 @@ $(document).ready(function () {
         if(err) throw err;
 
         var $myAdsTableBody = $("#myAdsTableBody");
-        data.forEach(function (myad) {
+        data.forEach(function (myad){
 
-            function locked() {
-                if (myad.locked == 1)
-                {return "Ja"}
-                else {return "Nej"}}
+            function locked(){
+                if (myad.locked == 1){
+                    return "Ja"
+                }
+                else {
+                    return "Nej"
+                }
+            }
 
             $myAdsTableBody.append(
                 "<tr>" +
@@ -105,7 +109,7 @@ $(document).ready(function () {
         });
 
         /**
-         * Unlock My Ad Reservation
+         * Unlock My Ad
          */
         $(".unlockMyAdButton").on("click", function(){
             var $unlockMyAdButton = $(this);
@@ -130,13 +134,28 @@ $(document).ready(function () {
 
             $myAdReservationsTableBody.append(
                 "<tr>" +
-                "<td>" + reservation.adId + "</td>" +
-                "<td>" + reservation.timestamp + "</td>" +
                 "<td>" + reservation.bookIsbn + "</td>" +
+                "<td>" + reservation.timestamp + "</td>" +
                 "<td>" + reservation.userUsername + "</td>" +
                 "<td>" + reservation.userPhonenumber + "</td>" +
-             // Lav en lås op   "<td><button class='reserveAdButton' data-adId=" + ad.adId + ">Reserver</button></td>" +
+                "<td><button class='deleteAdReservationButton' data-adId=" + reservation.adId + ">Slet reservation</button></td>" +
                 "</tr>");
+        });
+
+        /**
+         * Delete My Reservation
+         */
+        $(".deleteAdReservationButton").on("click", function(){
+            var $deleteAdReservationButton = $(this);
+            var adId = {
+                id: $deleteAdReservationButton.data("adid")
+            };
+
+            //Delete Ad Reservation
+            SDK.Ad.deleteAdReservation(adId, function (err){
+                if (err) throw err;
+                location.reload();
+            });
         });
     });
 

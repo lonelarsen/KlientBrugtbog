@@ -48,6 +48,9 @@ var SDK = {
     },
     unlockMyAd: function (data, cb) {
       SDK.request({method: "POST", url: "/unlockad", data: data}, cb);
+    },
+    deleteAdReservation: function (data, cb) {
+      SDK.request({method: "POST", url: "/deletereservation", data: data}, cb);
     }
   },
 
