@@ -34,6 +34,9 @@ var SDK = {
     getAll: function (cb) {
       SDK.request({method: "GET", url: "/getads"}, cb);
     },
+    getMyAdReservations: function (cb) {
+      SDK.request({method: "GET", url: "/getmyreservations"}, cb);
+    },
     create: function (data, cb) {
       SDK.request({method: "POST", url: "/createad", data: data}, cb);
     },
@@ -82,9 +85,9 @@ var SDK = {
 
       cb(null, data);
     });
-  }
+  },
 
-/*  Storage: {
+  Storage: {
     prefix: "BookStoreSDK",
     persist: function (key, value) {
       window.localStorage.setItem(this.prefix + key, (typeof value === 'object') ? JSON.stringify(value) : value)
@@ -101,5 +104,5 @@ var SDK = {
     remove:function (key) {
       window.localStorage.removeItem(this.prefix + key);
     }
-  }*/
+  }
 };

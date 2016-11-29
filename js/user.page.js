@@ -31,7 +31,7 @@ $(document).ready(function () {
                 "<td>" + ad.bookEdition + "</td>" +
                 "<td>" + ad.isbn + "</td>" +
                 "<td>" + ad.rating + "</td>" +
-                "<td>" + ad.pris + "</td>" +
+                "<td>" + ad.price + "</td>" +
                 "<td>" + ad.comment + "</td>" +
                 "<td><button class='reserveAdButton' data-adId=" + ad.adId + ">Reserver</button></td>" +
                 "</tr>");
@@ -78,6 +78,25 @@ $(document).ready(function () {
 
                 $("#newAdModal").modal("hide");
             });
+        });
+    });
+
+    //My Ad Reservations
+    SDK.Ad.getMyAdReservations(function(err, data){
+        if(err) throw err;
+
+        var $myAdReservationsTableBody = $("#myAdReservationsTableBody");
+        data.forEach(function (reservation) {
+
+            $myAdReservationsTableBody.append(
+                "<tr>" +
+                "<td>" + reservation.adId  + "</td>" +
+                "<td>" + reservation.timestamp  + "</td>" +
+                "<td>" + reservation.bookIsbn + "</td>" +
+                "<td>" + reservation.userUsername + "</td>" +
+                "<td>" + reservation.userPhonenumber + "</td>" +
+             // Lav en lås op   "<td><button class='reserveAdButton' data-adId=" + ad.adId + ">Reserver</button></td>" +
+                "</tr>");
         });
     });
 

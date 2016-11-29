@@ -51,8 +51,8 @@ $(document).ready(function () {
             "<td>" + ad.bookEdition + "</td>" +
             "<td>" + ad.isbn + "</td>" +
             "<td>" + ad.rating + "</td>" +
+            "<td>" + ad.price + "</td>" +
             "<td>" + ad.comment + "</td>" +
-            "<td>" + ad.pris + "</td>" +
             "</tr>");
       });
     });
