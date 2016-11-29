@@ -1,6 +1,6 @@
 $(document).ready(function () {
 
-    //Fires on page-load
+    //All Books
     SDK.Book.getAll(function(err, data){
       if(err) throw err;
 
@@ -17,12 +17,27 @@ $(document).ready(function () {
       });
     });
 
-    //Fires on page-load
+    //All Users
     SDK.User.getAll(function (err, data) {
       if (err) throw err;
 
       var $usersTableBody = $("#usersTableBody");
       data.forEach(function (user) {
+
+          function mobilepay() {
+              if (user.mobilepay == 1)
+              {return "Ja"}
+              else {return "Nej"}}
+
+          function cash() {
+              if (user.cash == 1)
+              {return "Ja"}
+              else {return "Nej"}}
+
+          function transfer() {
+              if (user.transfer == 1)
+              {return "Ja"}
+              else {return "Nej"}}
 
         $usersTableBody.append(
             "<tr>" +
@@ -30,14 +45,14 @@ $(document).ready(function () {
             "<td>" + user.phonenumber + "</td>" +
             "<td>" + user.address + "</td>" +
             "<td>" + user.email + "</td>" +
-            "<td>" + user.mobilepay + "</td>" +
-            "<td>" + user.cash + "</td>" +
-            "<td>" + user.transfer + "</td>" +
+            "<td>" + mobilepay() + "</td>" +
+            "<td>" + cash() + "</td>" +
+            "<td>" + transfer() + "</td>" +
             "</tr>");
       });
     });
 
-    //Fires on page-load
+    //All Ads
     SDK.Ad.getAll(function(err, data){
       if(err) throw err;
 
@@ -50,15 +65,26 @@ $(document).ready(function () {
             "<td>" + ad.bookAuthor  + "</td>" +
             "<td>" + ad.bookEdition + "</td>" +
             "<td>" + ad.isbn + "</td>" +
-            "<td>" + ad.rating + "</td>" +
+/*            "<td>" + ad.rating + "</td>" +
             "<td>" + ad.price + "</td>" +
-            "<td>" + ad.comment + "</td>" +
+            "<td>" + ad.comment + "</td>" +*/
             "</tr>");
       });
     });
 
-    var currentUser = SDK.User.current();
-    $("#currentUserName").text(currentUser.username);
+    /**
+     * Show Ad Details
+     */
+    $("#showAdDetailsButton").on("click", function (){
+
+        //Show modal
+        $('#adDetailsModal').modal('show');
+
+        //Close modal
+        $("#adDetailsButton").on("click", function(){
+            $("adDetailsModal").modal("hide");
+            });
+        });
 
     /**
      * Add a new Book
@@ -92,4 +118,7 @@ $(document).ready(function () {
         SDK.logOut();
         window.location.href = "index.html";
     });
+
+    var currentUser = SDK.User.current();
+    $("#currentUserName").text(currentUser.username);
 });

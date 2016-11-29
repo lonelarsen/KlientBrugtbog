@@ -10,7 +10,7 @@ $(document).ready(function () {
             $booksTableBody.append(
                 "<tr>" +
                 "<td>" + book.title + "</td>" +
-                "<td>" + book.author  + "</td>" +
+                "<td>" + book.author + "</td>" +
                 "<td>" + book.edition + "</td>" +
                 "<td>" + book.isbn + "</td>" +
                 "</tr>");
@@ -26,8 +26,8 @@ $(document).ready(function () {
 
             $adsTableBody.append(
                 "<tr>" +
-                "<td>" + ad.bookTitle+ "</td>" +
-                "<td>" + ad.bookAuthor  + "</td>" +
+                "<td>" + ad.bookTitle + "</td>" +
+                "<td>" + ad.bookAuthor + "</td>" +
                 "<td>" + ad.bookEdition + "</td>" +
                 "<td>" + ad.isbn + "</td>" +
                 "<td>" + ad.rating + "</td>" +
@@ -81,6 +81,46 @@ $(document).ready(function () {
         });
     });
 
+    //My Ads
+    SDK.Ad.getMyAds(function(err, data){
+        if(err) throw err;
+
+        var $myAdsTableBody = $("#myAdsTableBody");
+        data.forEach(function (myad) {
+
+            function locked() {
+                if (myad.locked == 1)
+                {return "Ja"}
+                else {return "Nej"}}
+
+            $myAdsTableBody.append(
+                "<tr>" +
+                "<td>" + myad.isbn + "</td>" +
+                "<td>" + myad.rating + "</td>" +
+                "<td>" + myad.price + "</td>" +
+                "<td>" + myad.comment + "</td>" +
+                "<td>" + locked() + "</td>" +
+                "<td><button class='unlockMyAdButton' data-adId=" + myad.adId + ">Fjern reservation</button></td>" +
+                "</tr>");
+        });
+
+        /**
+         * Unlock My Ad Reservation
+         */
+        $(".unlockMyAdButton").on("click", function(){
+            var $unlockMyAdButton = $(this);
+            var adId = {
+                id: $unlockMyAdButton.data("adid")
+            };
+
+            //Unlock Ad Reservation
+            SDK.Ad.unlockMyAd(adId, function (err){
+                if (err) throw err;
+                location.reload();
+            });
+        });
+    });
+
     //My Ad Reservations
     SDK.Ad.getMyAdReservations(function(err, data){
         if(err) throw err;
@@ -90,8 +130,8 @@ $(document).ready(function () {
 
             $myAdReservationsTableBody.append(
                 "<tr>" +
-                "<td>" + reservation.adId  + "</td>" +
-                "<td>" + reservation.timestamp  + "</td>" +
+                "<td>" + reservation.adId + "</td>" +
+                "<td>" + reservation.timestamp + "</td>" +
                 "<td>" + reservation.bookIsbn + "</td>" +
                 "<td>" + reservation.userUsername + "</td>" +
                 "<td>" + reservation.userPhonenumber + "</td>" +

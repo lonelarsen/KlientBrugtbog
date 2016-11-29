@@ -59,6 +59,40 @@
   </div>
 </div>
 
+<!-- Ad Details Modal -->
+<div class="modal fade" id="adDetailsModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title">Detaljer</h4>
+      </div>
+      <div class="modal-body">
+
+        <table class="table table-striped">
+          <thead>
+          <th>Titel</th>
+          <th>Forfatter(e)</th>
+          <th>Udgave</th>
+          <th>ISBN</th>
+          <th>Rating</th>
+          <th>Pris</th>
+          <th>Kommentar</th>
+          </thead>
+          <tbody id="adDetailsTableBody">
+          </tbody>
+        </table>
+      </div>
+
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Luk</button>
+        <button type="button" class="btn btn-success" id="createBkButton">Opret bog</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div class="container">
 
   <div class="row">
@@ -139,12 +173,6 @@
             <tbody id="usersTableBody">
             </tbody>
           </table>
-<!--
-          <hr>
-          <button class="btn btn-success" data-toggle="modal" data-target="#newUserModal">
-            <span class="glyphicon glyphicon-plus"></span> Opret ny bruger
-          </button>
--->
         </div>
       </div>
 

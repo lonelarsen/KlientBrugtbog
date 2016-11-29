@@ -37,11 +37,17 @@ var SDK = {
     getMyAdReservations: function (cb) {
       SDK.request({method: "GET", url: "/getmyreservations"}, cb);
     },
+    getMyAds: function (cb) {
+      SDK.request({method: "GET", url: "/getmyads"}, cb);
+    },
     create: function (data, cb) {
       SDK.request({method: "POST", url: "/createad", data: data}, cb);
     },
     reserve: function (data, cb) {
       SDK.request({method: "POST", url: "/reservead", data: data}, cb);
+    },
+    unlockMyAd: function (data, cb) {
+      SDK.request({method: "POST", url: "/unlockad", data: data}, cb);
     }
   },
 
