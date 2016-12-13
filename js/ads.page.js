@@ -1,6 +1,6 @@
 $(document).ready(function () {
 
-    //Fires on page-load
+    //Show Ads
     SDK.Ad.getAll(function(err, data){
         if(err) throw err;
 
@@ -20,4 +20,3 @@ $(document).ready(function () {
         });
     });
 });
-

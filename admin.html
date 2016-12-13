@@ -18,7 +18,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
-            aria-hidden="true">&times;</span></button>
+            aria-hidden="true">&times</span></button>
         <h4 class="modal-title">Opret ny bog</h4>
       </div>
       <div class="modal-body">
@@ -59,7 +59,8 @@
   </div>
 </div>
 
-<!-- Ad Details Modal -->
+<!--
+&lt;!&ndash; Ad Details Modal &ndash;&gt;
 <div class="modal fade" id="adDetailsModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -70,28 +71,70 @@
       </div>
       <div class="modal-body">
 
-        <table class="table table-striped">
+&lt;!&ndash;        <div class="row" >
+          <div class="col-md-12">
+            <div class="form-group">
+              <label class="control-label">Titel</label>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="form-group">
+              <label class="control-label">Forfatter</label>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-group">
+              <label class="control-label">Udgave</label>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="form-group">
+              <label class="control-label">ISBN</label>
+            </div>
+          </div>
+          <tbody id="adDetailsTableBody22222222">
+          </tbody>
+        </div>&ndash;&gt;
+&lt;!&ndash;        <table class="table table-striped">
           <thead>
           <th>Titel</th>
           <th>Forfatter(e)</th>
           <th>Udgave</th>
           <th>ISBN</th>
-          <th>Rating</th>
-          <th>Pris</th>
-          <th>Kommentar</th>
           </thead>
-          <tbody id="adDetailsTableBody">
+          <tbody id="adDetailTableBody">
           </tbody>
-        </table>
+        </table>&ndash;&gt;
+
+      <div class="panel panel-primary">
+        <div class="panel-heading">
+          <h3 class="panel-title">Annoncer</h3>
+        </div>
+        <div class="panel-body">
+
+          <table class="table table-striped">
+            <thead>
+            <th>Titel</th>
+            <th>Forfatter(e)</th>
+            <th>Udgave</th>
+            <th>ISBN</th>
+            <th> </th>
+            </thead>
+            <tbody id="adDetailsTableBody">
+            </tbody>
+          </table>
+        </div>
+      </div>
+
       </div>
 
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Luk</button>
-        <button type="button" class="btn btn-success" id="createBkButton">Opret bog</button>
       </div>
     </div>
   </div>
 </div>
+-->
 
 <div class="container">
 
@@ -101,8 +144,7 @@
       <nav class="navbar navbar-inverse">
         <div class="container-fluid">
           <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                    data-target="#bs-example-navbar-collapse-2">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
               <span class="sr-only">Toggle navigation</span>
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
@@ -113,12 +155,10 @@
 
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
             <ul class="nav navbar-nav">
-              <li><a>Hej, <span id="currentUsername"></span></a></li>
-              <li><a href="books.html">Se alle bøger</a></li>
-              <li><a href="ads.html">Se alle bøger til salg</a></li>
+              <li><a>Velkommen</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
-              <li><a id="logOutLink">Logud</a></li>
+              <li><a href="index.html" id="logOutLink">Logud</a></li>
             </ul>
           </div>
         </div>
@@ -191,6 +231,7 @@
             <th>Rating</th>
             <th>Pris</th>
             <th>Kommentar</th>
+            <th>Sælgers brugernavn</th>
             </thead>
             <tbody id="adsTableBody">
             </tbody>

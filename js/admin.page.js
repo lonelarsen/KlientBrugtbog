@@ -73,38 +73,25 @@ $(document).ready(function () {
 
         $adsTableBody.append(
             "<tr>" +
-            "<td>" + ad.bookTitle+ "</td>" +
-            "<td>" + ad.bookAuthor  + "</td>" +
+            "<td>" + ad.bookTitle + "</td>" +
+            "<td>" + ad.bookAuthor + "</td>" +
             "<td>" + ad.bookEdition + "</td>" +
             "<td>" + ad.isbn + "</td>" +
-/*            "<td>" + ad.rating + "</td>" +
+            "<td>" + ad.rating + "</td>" +
             "<td>" + ad.price + "</td>" +
-            "<td>" + ad.comment + "</td>" +*/
+            "<td>" + ad.comment + "</td>" +
+            "<td>" + ad.userUsername + "</td>" +
             "</tr>");
       });
     });
 
     /**
-     * Show Ad Details
-     */
-    $("#showAdDetailsButton").on("click", function (){
-
-        //Show modal
-        $('#adDetailsModal').modal('show');
-
-        //Close modal
-        $("#adDetailsButton").on("click", function(){
-            $("adDetailsModal").modal("hide");
-            });
-        });
-
-    /**
      * Add a new Book
      */
-    $("#addNewBookButton").on("click", function () {
+    $("#addNewBookButton").on("click", function (){
 
       //Show modal
-      $('#newBookModal').modal('show');
+      $("#newBookModal").modal("show");
 
       $("#createBookButton").on("click", function(){
 
@@ -114,11 +101,10 @@ $(document).ready(function () {
           author: $("#bookAuthor").val(),
           edition: $("#bookEdition").val(),
           isbn: parseInt($("#bookIsbn").val())
-          //publisherId: $("input[name=publisherRadios]:checked").val()
         };
 
         //Create book
-        SDK.Book.create(book, function(err, data){
+        SDK.Book.create(book, function(err){
           if(err) throw err;
 
           $("#newBookModal").modal("hide");

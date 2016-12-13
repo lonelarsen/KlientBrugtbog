@@ -29,7 +29,7 @@ $(document).ready(function () {
 
             mobilepay: mobilepayIsChecked,
             cash: cashIsChecked,
-            transfer: transferIsChecked,
+            transfer: transferIsChecked
         };
 
         //Create user

@@ -29,7 +29,6 @@ var SDK = {
     }
   },
 
-
   Ad: {
     getAll: function (cb) {
       SDK.request({method: "GET", url: "/getads"}, cb);
@@ -70,7 +69,7 @@ var SDK = {
   },
 
   logOut:function() {
-    SDK.Storage.remove("tokenId");
+    SDK.Storage.remove("sessionId");
     SDK.Storage.remove("userId");
     SDK.Storage.remove("user");
   },
@@ -85,10 +84,10 @@ var SDK = {
       method: "POST"
     }, function (err, data) {
 
-      //On login-error
+      //Ved login-fejl
       if (err) return cb(err);
 
-      SDK.Storage.persist("tokenId", data.id);
+      SDK.Storage.persist("sessionId", data.id);
       SDK.Storage.persist("userId", data.userId);
       SDK.Storage.persist("user", data.user);
 
